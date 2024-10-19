@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event Type</title>
+    </head>
+    <body>
+
+       <h1>Hello World</h1>
+       <h2>Hello Fcking Life</h2>
+       <button type="button" id="prepend-btn">Prepend</button>
+       <button type="button" id="append-btn">Append</button>
+       <button type="button" id="appendtobtn">AppendTo</button>
+
+      
+        
+
+
+      
+        <script src="./libs/jquery-3.7.1.min.js" type="text/javascript" ></script>
+    
+        <script type="text/javascript">
+
+           
+           $(document).ready(function(){
+
+                // $('#prepend-btn').click(function(){
+                //     $('h1').prepend('Hello Nadi');
+                // })
+
+                // $('#append-btn').click(function(){
+                //     $('h1').append('Hello Eaint Poke');
+                // })
+
+                $('#appendtobtn').click(function(){
+                    $('<p>Hello AthelNu</p>').appendTo('h1');
+                })
+          
+
+           });
+
+
+            
+
+
+        </script>
+    
+    </body>
+</html>

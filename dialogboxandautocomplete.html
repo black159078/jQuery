@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery uidialog</title>
+        <link href="./libs/jquery-ui-1.13.2/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+            *{
+                box-sizing: border-box;
+            }
+            .form-group{
+                margin: 10px 0;
+            }
+
+            .form-group label{
+                font-size: 20px;
+                font-weight: bold;
+                display:block;
+                margin-bottom: 20px;
+            }
+
+            .form-control{
+                width: 100%;
+                font-size: 20px;
+                border: 1px solid green;
+                border-radius: 3px;
+
+                padding: 10px;
+            }
+
+            .form-control:focus{
+                outline: none;
+                border: 1px solid green;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="dialog" title="How to use jQuery UI ?">
+            <!-- <p>Lorem Ipsum is simply dummy text of typesetting and industry.</p> -->
+            <form action="" method="">
+                <div class="form-group">
+                    <label for="favhero">Fav Hero</label>
+                    <input type="text" name="favhero" id="favhero" class="form-control" placeholder="Enter your fav hero name" />
+                </div>
+            </form>
+        </div>
+
+        <button type="button" id="clickme-btn">Click Me</button>
+        <button type="button" id="toggle-btn">Toggle Button</button>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
+        <script src="./libs/jquery-ui-1.13.2/jquery-ui.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+
+
+            $(document).ready(function(){
+
+                // dialog
+
+                $("#dialog").dialog({
+                    autoOpen:false,
+                    width:600,
+                    title:"Moonton's Favhero Event",
+                    hide:"slideUp",
+                    show:"down",
+                    position:{
+                        at:"center"
+                    }
+                });
+
+                $('#clickme-btn').click(function(){
+                    $('#dialog').dialog("open");
+                });
+
+                $('#toggle-btn').click(function(){
+                    // console.log($('#dialog').dialog("isOpen"));
+                    if($('#dialog').dialog("isOpen") === true){
+                        $('#dialog').dialog('close');
+                    }else{
+                        $('#dialog').dialog('open');
+                    }
+                });
+
+
+                // autocomplete
+
+                const herolist = [
+                    "Alucard",
+                    "Bruno",
+                    "Cyclops",
+                    "Hayabusa",
+                    "Hanabi",
+                    "Julian",
+                    "Kagura",
+                    "Natalia",
+                    "Kaja",
+                    "silvana",
+                    "zhask",
+                    "Ling",
+                    "Lancelott",
+                    "Fanny"
+                ]
+
+                $('input').autocomplete({
+                    source:herolist
+                });
+
+            });
+
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event Type</title>
+        <style type="text/css">
+            body{
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container{
+                width:500px;
+                background-color: #f4f4f4;
+                
+                padding: 20px;
+            }
+
+            .form-group{
+                margin: 20px;
+            }
+           
+        </style>
+    </head>
+    <body>
+
+       <div class="container">
+        <form action="" method="">
+            <div class="form-group">
+                <label for="firstname">Firstname</label>
+                <input type="text" name="firstname" id="firstname" class="form-control" autocomplete="off" />
+            </div>
+        
+            <div class="form-group">
+                <label for="lastname">Lastname</label>
+                <input type="text" name="lastname" id="lastname" class="form-control" autocomplete="off" />
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select name="country" id="country" class="form-select">
+                    <option selected disabled value="">Choose a country</option>
+                    <option value="mm">Myanmar</option>
+                    <option value="th">Thailand</option>
+                    <option value="ido">Indonesia</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+                <label for="fav">Fav fruits</label>
+                <select name="fav[]" id="fav" class="form-select" multiple>
+                    <option value="app">Apple</option>
+                    <option value="ora">Orange</option>
+                    <option value="man">Mango</option>
+                    <option value="man">Mango</option>
+                </select>
+
+            </div>
+            
+        </form>
+
+        <h1>Result:</h1>
+
+        <table>
+            <tr>
+                <td id="firstnamerst">sample</td>
+            </tr>
+            <tr>
+                <td id="lastnamerst">sample</td>
+            </tr>
+            <tr>
+                <td id="countryrst">sample</td>
+            </tr>
+            <tr>
+                <td id="favrst">sample</td>
+            </tr>
+        </table>
+
+
+
+
+
+
+
+       </div>
+
+
+      
+        
+
+
+      
+        <script src="./libs/jquery-3.7.1.min.js" type="text/javascript" ></script>
+    
+        <script type="text/javascript">
+
+           
+           $(document).ready(function(){
+
+            function showresult(){
+
+                // console.log('hello');
+
+                const getfirstname = $('#firstname').val();
+                // console.log(getfirstname);
+                const getlastname = $('#lastname').val();
+                // console.log(getlastname);
+                const getcountry = $('#country').val();
+                // console.log(getcountry);
+                const getfav = $('#fav').val();
+                // console.log(getfav);    
+
+                $('#firstnamerst').html(`<b>Result of firstname is </b> ${getfirstname} `);
+                $('#lastnamerst').html(`<b>Result of lastname is </b> ${getlastname} `);
+                $('#countryrst').html(`<b>Result of country is </b> ${getcountry}`);
+                $('#favrst').html(`<b> Result of fav fruits is </b> ${getfav} `);
+            }
+
+            $('#firstname').change(showresult);
+            $('#lastname').change(showresult);
+            $('#country').change(showresult);
+            $('#fav').change(showresult);
+        
+
+            // const getcountry = $('#country').val();
+            // console.log(getcountry);
+
+
+
+
+           });
+
+
+            
+
+
+        </script>
+    
+    </body>
+</html>

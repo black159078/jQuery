@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event Type</title>
+    </head>
+    <body>
+
+       
+       <h1>Hello Nadi Hlaing</h1>
+       <h4>Hello jQuery</h4>
+
+       <button type="button" id="delegatebtn">delegate</button>
+       <button type="button" id="undelegatebtn">undelegate</button>
+       <button type="button" id="hibtn">say hi</button>
+       <button type="button" id="zoombtn">zoom me</button>
+       
+      
+        
+
+
+      
+        <script src="./libs/jquery-3.7.1.min.js" type="text/javascript" ></script>
+    
+        <script type="text/javascript">
+
+           
+           $(document).ready(function(){
+
+                $('body').delegate('#delegatebtn','click',function(){
+                    $('h1').append("<p>Hello Lin Tun</p>");
+                })
+
+                $('#undelegatebtn').click(function(e){
+                    $('body').undelegate('click');
+                })
+
+                $('#hibtn').click(function(){
+                    console.log('hi');
+                })
+
+                let x = 0;
+
+                $('#zoombtn').click(function(e){
+                    $('h4').animate({
+                        "font-size":"+=10px"
+                    })
+
+                    x++;
+
+                    $(this).text("zoom "+ x);
+
+                    if(x >= 5){
+                        $('body').undelegate(e);
+                    }
+
+                    
+
+                })
+
+
+                
+          
+
+           });
+
+
+            
+
+
+        </script>
+    
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reload</title>
+        <style type="text/css">
+            body{
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container{
+                width: 500px;
+                background-color: #f4f4f4;
+
+                padding: 20px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>Hello Everyone,Today i will introduce my project!</h1>
+            <p id="nobita"></p>
+            <button type="button">reload</button>
+        </div>        
+       
+
+
+      
+        <script src="./libs/jquery-3.7.1.min.js" type="text/javascript" ></script>
+    
+        <script type="text/javascript">
+
+      
+           $(document).ready(function(){
+
+                let getdate = new Date();
+                // console.log(getdate);
+
+                $('#nobita').text(getdate);
+
+                $('button').click(function(){
+                    window.location.reload();
+                })
+               
+
+           });
+
+
+            
+
+
+        </script>
+    
+    </body>
+</html>
